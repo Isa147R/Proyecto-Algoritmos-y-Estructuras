@@ -3,6 +3,9 @@
 
 using namespace std;
 
+#ifndef CONTACTO_H
+#define CONTACTO_H
+
 class Contacto {
   public:
       std::string nombre;
@@ -19,5 +22,14 @@ class Contacto {
         direccion = d;
   
       }
+
+      friend std::ostream& operator<<(std::ostream& os, const Contacto& contacto) {
+        os << "Nombre: " << contacto.nombre << "\nTeléfono: " << contacto.telefono
+           << "\nRedes Sociales: " << contacto.redes_sociales << "\nIcono: " << contacto.icono
+           << "\nDirección: " << contacto.direccion << "\n";
+        return os;
+    } 
           
 };
+
+#endif
